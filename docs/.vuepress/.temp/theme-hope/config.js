@@ -1,0 +1,53 @@
+import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scrollPromise } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/bundle/exports/base.js";
+
+import { defineCatalogInfoGetter } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/plugin-catalog/dist/client/index.js"
+import { h } from "vue"
+import { resolveComponent } from "vue"
+import { Blog, BloggerInfo, SocialMedias, setupBlog } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/bundle/exports/blog.js";
+import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/client/styles/blog/layout.scss";
+
+import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/colors.css";
+import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/normalize.css";
+import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/sr-only.css";
+import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/client/styles/index.scss";
+
+defineCatalogInfoGetter((meta) => {
+  const title = meta.title;
+  const shouldIndex = meta.index ?? true;
+  const icon = meta.icon;
+
+  return shouldIndex ? {
+    title,
+    content: icon ? () =>[h(resolveComponent("VPIcon"), { icon, sizing: "both" }), title] : null,
+    order: meta.order,
+    index: meta.index,
+  } : null;
+});
+
+export default {
+  enhance: ({ app, router }) => {
+    const { scrollBehavior } = router.options;
+
+    router.options.scrollBehavior = async (...args) => {
+      await scrollPromise.wait();
+
+      return scrollBehavior(...args);
+    };
+
+    // inject global properties
+    injectDarkMode(app);
+
+    app.component("BloggerInfo", BloggerInfo);
+    app.component("SocialMedias", SocialMedias);
+  },
+  setup: () => {
+    setupDarkMode();
+    setupSidebarItems();
+    setupBlog();
+  },
+  layouts: {
+    Layout,
+    NotFound,
+    Blog,
+  }
+};

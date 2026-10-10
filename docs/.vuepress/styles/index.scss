@@ -1,0 +1,368 @@
+body {
+  @media (min-width: 1440px) {
+    font-size: 16px;
+  }
+}
+
+#markdown-content img,
+.vp-content img,
+.theme-hope-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-promo-image {
+  display: block;
+  margin: 1rem auto;
+
+  img {
+    display: block;
+    width: min(100%, 1774px);
+    aspect-ratio: 1774 / 887;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.article-footer-qrcode {
+  display: block;
+  width: min(612px, 100%);
+  margin: 0 auto;
+}
+
+// ============================================
+// 沉浸式阅读模式 - 隐藏导航栏、侧边栏和目录
+// ============================================
+
+// 过渡动画
+.vp-navbar,
+.vp-sidebar,
+.vp-page,
+.theme-container .vp-page {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
+    width 0.3s ease;
+}
+
+// 隐藏布局模式
+html.layout-hidden {
+  // 隐藏顶部导航栏
+  .vp-navbar {
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  // 隐藏左侧边栏
+  .vp-sidebar {
+    transform: translateX(-100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+  }
+
+  // 隐藏侧边栏切换按钮（小屏幕下的展开按钮）
+  .toggle-sidebar-wrapper {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  // 隐藏侧边栏遮罩层
+  .vp-sidebar-mask {
+    display: none !important;
+  }
+
+  // 侧边栏包装器
+  .vp-sidebar-wrapper,
+  .sidebar-wrapper {
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  // 隐藏右侧目录 (TOC)
+  .vp-toc-placeholder,
+  .toc-wrapper,
+  .vp-toc,
+  aside.vp-toc,
+  .toc {
+    display: none !important;
+    width: 0 !important;
+  }
+
+  // 主容器调整 - 移除左侧 padding/margin
+  .theme-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    .vp-page {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+      padding-top: 1rem !important;
+      margin-left: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+  }
+
+  // 主题内容区域调整 - 让内容更宽
+  .theme-hope-content,
+  .vp-page-content,
+  .vp-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem 2rem !important;
+  }
+
+  // 页面容器调整
+  .vp-page-container {
+    padding-top: 1rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  // 确保内容区域居中且宽度适中
+  .theme-container > main {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    max-width: 100% !important;
+  }
+
+  // 响应式调整
+  @media (min-width: 960px) {
+    .theme-container .vp-page {
+      margin-left: 0 !important;
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+
+    .theme-hope-content,
+    .vp-page-content,
+    .vp-content {
+      max-width: 100% !important;
+      padding: 1rem 2rem !important;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .theme-container .vp-page {
+      margin-left: 0 !important;
+      padding-left: 4rem !important;
+      padding-right: 4rem !important;
+    }
+
+    .theme-hope-content,
+    .vp-page-content,
+    .vp-content {
+      max-width: 100% !important;
+      padding: 1rem 3rem !important;
+    }
+  }
+}
+
+// ============================================
+// 首页卡片化布局 - 紫色系（基于 logo #472966）
+// ============================================
+
+.home-hero {
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  margin: 1.5rem 0 2rem;
+  background: linear-gradient(135deg, #472966 0%, #6b3fa0 55%, #8b5cf6 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(71, 41, 102, 0.25);
+
+  .home-hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    color: #fff;
+  }
+
+  .home-hero-subtitle {
+    font-size: 1.1rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.home-card {
+  background: #faf7ff;
+  border: 1px solid #ede0f7;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  margin: 1.5rem 0;
+
+  .home-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+    color: #2d1b4e;
+  }
+}
+
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+
+  .knowledge-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    .knowledge-tag {
+      flex-shrink: 0;
+      padding: 0.25rem 0.6rem;
+      background: #ede0f7;
+      color: #6b3fa0;
+      border-radius: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .knowledge-desc {
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ede0f7;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  text-decoration: none;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(71, 41, 102, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .home-link-card-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .home-link-card-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2d1b4e;
+  }
+
+  .home-link-card-arrow {
+    color: #6b3fa0;
+    font-size: 1.25rem;
+  }
+}
+
+// 知识体系网格 - 6 卡片布局
+.knowledge-system {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+
+  .ks-card {
+    background: #fff;
+    border: 1px solid #ede0f7;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(71, 41, 102, 0.12);
+    }
+
+    .ks-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #ede0f7;
+      margin-bottom: 1rem;
+
+      .ks-icon {
+        font-size: 1.4rem;
+      }
+
+      .ks-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #2d1b4e;
+        margin: 0;
+      }
+    }
+
+    .ks-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .ks-tag {
+        padding: 0.3rem 0.7rem;
+        border-radius: 0.4rem;
+        font-size: 0.85rem;
+        background: #f3f0f7;
+        color: #555;
+      }
+
+      .ks-tag-primary {
+        background: #ede0f7;
+        color: #6b3fa0;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .knowledge-system {
+    grid-template-columns: 1fr;
+  }
+}
+
+// 学习建议条
+.learning-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: #faf7ff;
+  border: 1px solid #ede0f7;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  color: #4a4a4a;
+
+  .learning-tip-label {
+    font-weight: 700;
+    color: #6b3fa0;
+    white-space: nowrap;
+  }
+}

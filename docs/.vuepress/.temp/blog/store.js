@@ -1,0 +1,1 @@
+export const store = JSON.parse("{\"0\":\"/interview/\",\"1\":\"/interview/hr-questions.html\",\"2\":\"/interview/resume.html\",\"3\":\"/leonLearn/me.html\",\"4\":\"/java/\",\"5\":\"/java/start/email.html\",\"6\":\"/java/start/path.html\"}");
