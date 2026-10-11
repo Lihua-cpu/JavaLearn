@@ -1,3 +1,10 @@
+# 临时编译文件
+docs/.vuepress/.temp/
+# 缓存文件
+docs/.vuepress/.cache/
+# build打包输出静态站点（部署产物，不提交源码仓库）
+docs/.vuepress/dist/
+
 # 依赖
 node_modules/
 
@@ -11,3 +18,4 @@ node_modules/
 dist/
 build/
 out/
+

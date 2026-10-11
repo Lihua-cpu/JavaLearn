@@ -1,3 +1,15 @@
+---
+title: 1、简历准备
+description: 深入解析 AI Agent 核心概念，梳理从被动响应到常驻自治的演进历程，对比 Agent、传统编程、Workflow 的区别和适用场景。
+category: 面试资料
+tag:
+  - 后端面试
+head:
+  - - meta
+    - name: keywords
+      content: AI Agent,智能体,ReAct,Function Calling,RAG,MCP,多智能体协作,Computer Use
+---
+
 ## [一、“面霸”&“面渣”](#一、面霸-面渣)
 有的人，面试 30 家都没有 offer，有的人，面试 3 家能拿到 3 个 offer。为什么会有如此大的区别呢？
 

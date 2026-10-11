@@ -34,23 +34,114 @@ export default sidebar({
       prefix: "interview-preparation/",
       children: [
         {
-          text: "Java 入门到精通",
+          text: "一、Java 入门到精通",
           prefix: "basis/",
           collapsible: true,
           children: [
-            
+            {
+              text: "1、Java概述",
+              link: "/java/basis/java-overview",
+            },
+            {
+              text: "2、变量与数据类型",
+              link: "/java/basis/variables-and-data-types",
+            },
+            {
+              text: "3、运算符与表达式",
+              link: "/java/basis/operators-and-expressions",
+            },
+            {
+              text: "4、流程控制语句",
+              link: "/java/basis/flow-control-statements",
+            },
+            {
+              text: "5、数组与字符串",
+              link: "/java/basis/arrays-and-strings",
+            },
+            {
+              text: "6、方法与参数传递",
+              link: "/java/basis/methods-and-parameters",
+            },
+            {
+              text: "7、面向对象编程",
+              link: "/java/basis/object-oriented-programming",
+            },
+            {
+              text: "8、异常处理",
+              link: "/java/basis/exception-handling",
+            },
+            {
+              text: "9、Java集合框架",
+              link: "/java/basis/java-collection-framework",
+            },
+            {
+              text: "10、Java多线程编程",
+              link: "/java/basis/java-multithreading-programming",
+            },
+            {
+              text: "11、Java I/O流",
+              link: "/java/basis/java-i-o-streams",
+            },
+            {
+              text: "12、Java网络编程",
+              link: "/java/basis/java-network-programming",
+            }
           ],
         },
         {
-            text: "Java数据结构与算法",
+            text: "二、Java数据结构与算法",
             prefix: "basis/",
             collapsible: true,
             children: [
+              {
+                text: "1、数据结构概述",
+                link: "/java/basis/data-structures-overview",
+              },
+              {
+                text: "2、数组与链表",
+                link: "/java/basis/arrays-and-linked-lists",
+              },
+              {
+                text: "3、栈与队列",
+                link: "/java/basis/stacks-and-queues",
+              },
+              {
+                text: "4、哈希表",
+                link: "/java/basis/hash-table",
+              },
+              {
+                text: "5、树与二叉树",
+                link: "/java/basis/trees-and-binary-trees",
+              },
+              {
+                text: "6、分治算法",
+                link: "/java/basis/divide-and-conquer-algorithms",
+              },
+              {
+                text: "7、排序算法",
+                link: "/java/basis/sorting-algorithms",
+              },
+              {
+                text: "8、贪心算法",
+                link: "/java/basis/greedy-algorithms",
+              },
+              {
+                text: "9、动态规划",
+                link: "/java/basis/dynamic-programming",
+              },
               
+              {
+                text: "10、图与图算法",
+                link: "/java/basis/graphs-and-graph-algorithms",
+              },
+              {
+                text: "11、搜索算法",
+                link: "/java/basis/searching-algorithms",
+              },
             ],
           },
           {
-            text: "Java新特性",
+            text: "三、Java新特性",
             prefix: "basis/",
             collapsible: true,
             children: [

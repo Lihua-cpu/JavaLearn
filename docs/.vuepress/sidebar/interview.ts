@@ -9,11 +9,11 @@ export const interview = arraySidebar([
     children: [
       { 
         text: "1、简历准备", 
-        link: "/interview/resume" 
+        link: "/interview/preparation/resume" 
       },
       { 
         text: "2、HR必备问题", 
-        link: "/interview/hr-questions" 
+        link: "/interview/preparation/hr-questions" 
       }
     ],
   },
@@ -28,57 +28,65 @@ export const interview = arraySidebar([
       },
       { 
         text: "一、Java基础", 
-        link: "ai-core-concepts" 
+        link: "/interview/java/basic" 
       },
       { 
         text: "二、Java面向对象", 
-        link: "/" 
+        link: "/interview/java/oop" 
       },
       { 
         text: "三、Java数据类型", 
-        link: "/" 
+        link: "/interview/java/data-types" 
       },
       { 
         text: "四、Java异常", 
-        link: "/" 
+        link: "/interview/java/exceptions" 
       },
       { 
         text: "五、Java集合容器", 
-        link: "/" 
+        link: "/interview/java/collections" 
       },
       { 
         text: "六、Java IO", 
-        link: "/" 
+        link: "/interview/java/io" 
       },
       { 
         text: "七、Java枚举 & 泛型", 
-        link: "/" 
+        link: "/interview/java/enums-generics" 
       },
-      { 
-        text: "八、Java并发", 
-        link: "/" 
-      },
-      { 
-        text: "九、Java多线程", 
-        link: "/" 
-      },
-      { 
-        text: "十、Java反射", 
-        link: "/" 
-      },
-      { 
-        text: "十一、JVM", 
-        link: "/" 
-      },
-      { 
-        text: "十二、Java Web", 
-        link: "/" 
-      },
-      { 
-        text: "十三、设计模式（可选）", 
-        link: "/" 
-      },
+      
     ],
+  },
+  {
+    text:"Java高级",
+    icon: ICONS.JAVA,
+    collapsible: true,
+    children: [
+      { 
+        text: "八、反射", 
+        link: "/interview/java/reflection" 
+      },
+      { 
+        text: "九、JVM", 
+        link: "/interview/java/jvm" 
+      },
+      { 
+        text: "十、Java并发编程", 
+        link: "/interview/java/concurrent" 
+      },
+      { 
+        text: "十一、Java多线程", 
+        link: "/interview/java/multithreading" 
+      },
+      { 
+        text: "十二、Java web开发", 
+        link: "/interview/java/web" 
+      },
+      { 
+        text: "十三、Java设计模式（可选）", 
+        link: "/interview/java/design-patterns" 
+      },
+    ], 
   },
   {
     text: "计算机基础面试题",
@@ -87,11 +95,11 @@ export const interview = arraySidebar([
     children: [
       { 
         text: "计算机网络", 
-        link: "ai-core-concepts" 
+        link: "/interview/computer/network" 
       },
       { 
         text: "Java数据结构与算法", 
-        link: "ai-core-concepts" 
+        link: "/interview/computer/data-structures-algorithms" 
       },
     ],
   },
@@ -104,13 +112,51 @@ export const interview = arraySidebar([
         text: "MySql面试题", 
         icon: ICONS.MYSQL,
         collapsible: true,
-        link: "/" 
+        children: [
+          { 
+            text: "MySql面试题说明", 
+            link: "/interview/database/mysql/mysql" 
+          },
+          { 
+            text: "MySql基础面试题", 
+            link: "/interview/database/mysql/basic" 
+          },
+          { 
+            text: "MySql索引", 
+            link: "/interview/database/mysql/mysql" 
+          },
+          { 
+            text: "MySql内部技术原理", 
+            link: "/interview/database/mysql/basic" 
+          },
+          { 
+            text: "MySql事务", 
+            link: "/interview/database/mysql/mysql" 
+          },
+          { 
+            text: "MySql锁机制", 
+            link: "/interview/database/mysql/basic" 
+          },
+          { 
+            text: "MySql优化", 
+            link: "/interview/database/mysql/basic" 
+          },
+        ],
       },
       { 
         text: "Redis面试题", 
         icon: ICONS.REDIS,
         collapsible: true,
-        link: "/" 
+        children: [
+          { 
+            text: "Redis面试题说明", 
+            link: "/interview/database/redis/redis" 
+          },
+          { 
+            text: "Redis基础面试题", 
+            link: "/interview/database/redis/basic" 
+          },
+        ]
       },
     ],
   },
@@ -121,27 +167,27 @@ export const interview = arraySidebar([
     children: [
       { 
         text: "Spring面试题", 
-        link: "/" 
+        link: "/interview/spring/spring" 
       },
       { 
         text: "Srping MVC面试题", 
-        link: "/" 
+        link: "/interview/spring/spring-mvc" 
       },
       { 
         text: "MyBatis面试题", 
-        link: "/" 
+        link: "/interview/spring/mybatis" 
       },
       { 
         text: "Spring Boot面试题", 
-        link: "/" 
+        link: "/interview/spring/spring-boot" 
       },
       { 
         text: "Spring Cloud面试题", 
-        link: "/" 
+        link: "/interview/spring/spring-cloud" 
       },
       { 
         text: "Spring Cloud Alibaba面试题", 
-        link: "/" 
+        link: "/interview/spring/spring-cloud-alibaba" 
       },
     ],
   },
@@ -152,27 +198,31 @@ export const interview = arraySidebar([
     children: [
       { 
         text: "RabbitMQ面试题", 
-        link: "/" 
+        link: "/interview/component/rabbitmq" 
       },
       { 
         text: "Elastic Search面试题", 
-        link: "/" 
+        link: "/interview/component/elastic-search" 
       },
       { 
-        text: "MyBatis面试题", 
-        link: "/" 
+        text: "Zookeeper面试题", 
+        link: "/interview/component/zookeeper" 
       },
       { 
-        text: "Spring Boot面试题", 
-        link: "/" 
+        text: "Seata面试题", 
+        link: "/interview/component/seata" 
       },
       { 
-        text: "Spring Cloud面试题", 
-        link: "/" 
+        text: "Nacos面试题", 
+        link: "/interview/component/nacos" 
       },
       { 
-        text: "Spring Cloud Alibaba面试题", 
-        link: "/" 
+        text: "Kafka面试题", 
+        link: "/interview/component/kafka" 
+      },
+      { 
+        text: "Sentinel面试题", 
+        link: "/interview/component/sentinel" 
       },
     ],
   },
@@ -187,11 +237,11 @@ export const interview = arraySidebar([
         children: [
           {
             text: "ArrayList源码分析",
-            link: "/interview/system-design/framework/rabbitmq/basic-interview.md",
+            link: "/interview/code-analysis/java/arraylist-source-code.md",
           },
           {
             text: "HashMap源码分析",
-            link: "/interview/system-design/framework/rabbitmq/basic-interview.md",
+            link: "/interview/code-analysis/java/hashmap-source-code.md",
           }
         ],
       },
@@ -201,15 +251,15 @@ export const interview = arraySidebar([
         children: [
           {
             text: "Spring Bean生命周期",
-            link: "/interview/system-design/framework/rabbitmq/basic-interview.md",
+            link: "/interview/code-analysis/spring/bean-lifecycle.md",
           },
           {
             text: "Spring Refresh过程",
-            link: "/interview/system-design/framework/rabbitmq/basic-interview.md",
+            link: "/interview/code-analysis/spring/refresh-process.md",
           },
           {
             text: "Spring 事务实效的场景",
-            link: "/interview/system-design/framework/rabbitmq/basic-interview.md",
+            link: "/interview/code-analysis/spring/transaction-failure-scenarios.md",
           }
         ],
       },

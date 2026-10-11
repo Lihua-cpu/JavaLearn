@@ -9,6 +9,8 @@ const mermaidComponentPath = require.resolve(
 );
 
 export default defineUserConfig({
+  // Leon TIP 20261010 根据项目名来设置 base 路径，如果部署在nginx就不需要这个路径，直接去掉
+  base : "/JavaLearn-web/" ,
   dest: "./dist",
 
   title: "LeonLearn Java",
