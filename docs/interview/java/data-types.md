@@ -11,282 +11,198 @@ head:
       content: Java基础面试题、Java面试题
 ---
 
-## [1、面向对象都有哪些特性以及你对这些特性的理解？](#_1、面向对象都有哪些特性以及你对这些特性的理解)
-1. **继承**：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被称为父类（超类、基类）；得到继承信息的 类被称为子类（派生类）。继承让变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要手段。
-2. **封装**：通常认为封装是把数据和操作数据的方法绑定起来，对数据的访问只能通过已定义的接口。面向对象的本质就是将现实世界描绘成一系列完全自治、封闭的对象。我们在类中编写的方法就是对实现细节的一种封装；我们编写一个类就是对数据和数据操作的封装。可以说，封装就是隐藏一切可隐藏的东西，只向外界提供最简单的编程接口。
-3. **多态性**：多态性是指允许不同子类型的对象对同一消息作出不同的响应。简单的说就是用同样的对象引用调用同样的方法但是做了不同的事情。多态性分为编译时的多态性和运行时的多态性。如果将对象的方法视为对象向外界提供的服务，那么运行时的多态性可以解释为：当 A 系统访问 B 系统提供的服务时， B 系统有多种提供服务的方式，但一切对 A 系统来说都是透明的。方法重载（ overload ）实现的是编译时的多态性（也称为前绑定），而方法重写override ）实现的是运行时的多态性（也称为后绑定）。运行时的多态是面向对象最精髓的东西，要实现 多态需要做两件事： 1. 方法重写（子类继承父类并重写父类中已有的或抽象的方法）； 2. 对象造型（用父类型引用引用子类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）。
-4. **抽象**：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。
-
-## [2、访问 权限 修饰符 public 、 private 、 protected， 以及不写（默认）时的区别](#_2、访问-权限-修饰符-public-、-private-、-protected-以及不写-默认-时的区别)
-| 修饰符 | 当前类 | 同包 | 子类 | 其他包 |
-| --- | --- | --- | --- | --- |
-| public | √ | √ | √ | √ |
-| protected | √ | √ | √ | × |
-| default | √ | √ | × | × |
-| private | √ | × | × | × |
-
-
-## [3、如何理解 clone 对象](#_3、如何理解-clone-对象)
-### [1、为什么要用 clone](#_1、为什么要用-clone)
-在实际编程过程中，我们常常要遇到这种情况：有一个对象A ，在某一时刻 A 中已经包含了一些有效值，此时可能会需要一个和 A 完全相同新对象 B ，并且此后对 B 任何改动都不会影响到 A 中的值，也就是说， A 与 B 是两个独立的对象，但 B 的初始值是由 A 对象确定的。在 Java 语言中，用简单的赋值语句是不能满足这种需求的。要满足这种需求虽然有很多途径，但实现 clone （）方法是其中最简单，也是最高效的手段。
-
-### [2、new一个对象的过程和 clone一个对象的过程区别？](#_2、new一个对象的过程和-clone一个对象的过程区别)
-new操作符的本意是分配内存。程序执行到 new 操作符时，首先去看 new 操作符后面的类型，因为知道了类型，才能知道要分配多大的内存空间。分配完内存之后，再调用构造函数，填充对象的各个域，这一步叫做对象的初始化，构造方法返回后，一个对象创建完毕，可以把他的引用（地址）发布到外部，在外部就可以使用这个引用操纵这个对象。
-
-clone在第一步是和 new 相似的，都是分配内存，调用 clone 方法时，分配的内存和原对象（即调用 clone 方法的对象）相同，然后再使用原对象中对应的各个域，填充新对象的域，填充完成之后， clone 方法返回，一个新的相同的对象被创建，同样可以把这个新对象的引用发布到外部。
-
-### [3、clone对象的使用？](#_3、clone对象的使用)
-#### [1、复制对象和复制引用的区别](#_1、复制对象和复制引用的区别)
-```java
-Person p = new Person(23,"xiaobear");
-Person p1 = p;
-System.out.println(p);
-System.out.println(p1);
-```
-
-当Person p1 = p; 执行之后， 是创建了一个新的对象吗？ 首先看打印结果：
-
-```plain
-Person@2f9ee1ac
-Person@2f9ee1ac
-```
-
-可以看出，打印的地址值是相同的，既然地址都是相同的，那么肯定是同一个对象。p 和 p1 只是引用而已，他们都指向了一个相同的对象 Person(23, zhang ””) 。 可以把这种现象叫做**引用的复制**。上面代码执行完成之后，内存中的情景如下图所示：
-
+## [1、Java 的基本数据类型都有哪些各占几个字节？](#_1、java-的基本数据类型都有哪些各占几个字节)
 <!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/33699215/1791703790229-4fb64954-656b-4dad-88c1-2f1f4b6d0c28.png)
+![](https://cdn.nlark.com/yuque/0/2026/png/33699215/1791705570248-79c3565c-7424-4d8b-9ba6-65c8e69e12f7.png)
 
-而下面的代码是真真正正的克隆了一个对象。
+## [2、String 是最基本的数据类型吗？](#_2、string-是最基本的数据类型吗)
+不是，String是引用类型，底层是用char数组实现的。
 
-```java
-Person p = new Person(23, "xiaobear");
-Person p1 = (Person) p.clone();
-System.out.println(p);
-System.out.println(p1);
-```
+Java 中的基本数据类型只有8 个：`byte`、`short`、`int`、`long`、`float`、`double`、`char`、`boolean`；除了基本类型（primitive type），剩下的都是引用类型（referencetype）， Java 5 以后引入的枚举类型也算是一种比较特殊的引用类型。
 
-从打印结果可以看出，两个对象的地址是不同的，也就是说创建了新的对象，而不是把原对象的地址赋给了一个新的引用变量：
+## [3、运行short s1 = 1， s1 = s1 + 1 ；会出现什么结果？运行short s1 = 1; s1 += 1 ；又会出现什么结果？](#_3、运行short-s1-1-s1-s1-1-会出现什么结果-运行short-s1-1-s1-1-又会出现什么结果)
++ 运行第一个会报错，因为1是`int`类型，而s是`short`类型，通过+运算后s1自动转换成`int`型。错误提示：Error:(21, 17) java: 不兼容的类型: 从`int`转换到`short`可能会有损失
++ 运行第二个是正确的，s1=2，+1是`int`类型的操作，s1自动转换`int`类型
 
-```plain
-Person@2f9ee1ac
-Person@67f1fba0
-```
+## [4、int 和Integer 有什么区别？](#_4、int-和integer-有什么区别)
+Java 是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java 为每一个基本数据类型都引入了对应的包装类型（wrapper class），int 的包装类就是Integer，从Java 5 开始引入了自动装箱/拆箱机制，使得二者可以相互转换。
 
-以上代码执行完成后，内存中的情景如下图所示：
-
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/33699215/1791703799230-99ca9eb7-6193-46e4-a9b3-1dc17f9fc389.png)
-
-#### [2、深拷贝和浅拷贝](#_2、深拷贝和浅拷贝)
-上面的示例代码中，Person 中有两个成员变量，分别是 name 和 age name 是 String 类型， age 是 int 类型。代码非常简单，如下所示：
++ 原始类型: boolean， char， byte， short， int， long， float，double
++ 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double
 
 ```java
-public class Person implements Cloneable{
-	private int age ;
-    private String name;
-    public Person(int age, String name) {
-     this.age = age;
-     this.name = name;
-    }
-
-     public Person() {}
-     public int getAge() {
-     return age;
-     }
-
-     public String getName() {
-         return name;
-     }
-     @Override
-     protected Object clone() throws CloneNotSupportedException {
-     return (Person)super.clone();
-     }
-}
-```
-
-由于age 是基本数据类型， 那么对它的拷贝没有什么疑议，直接将一个 4 字节的整数值拷贝过来就行。但是 name是 String 类型的， 它只是一个引用， 指向一个真正的 String 对象，那么对它的拷贝 有两种方式： 直接将原对象中的 name 的引用值拷贝给新对象的 name 字段， 或者是根据原 Person 对象中的 name 指向的字符串对象创建一个新的相同的字符串对象，将这个新字符串对象的引用赋给新拷贝的 Person 对象的 name 字段。这两种拷贝方式分别  
-叫做浅拷贝和深拷贝。深拷贝和浅拷贝的原理如下图所示：
-
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/33699215/1791703809142-a5fffca0-006e-4175-afd5-2e9c9f8835db.png)
-
-下面通过代码进行验证。如果两个Person 对象的 name 的地址值相同， 说明两个对象的 name 都指向同一个String 对象，也就是浅拷贝， 而如果两个对象的 name 的地址值不同， 那 么就说明指向不同的 String 对象， 也就是在拷贝 Person 对象的时候， 同时拷贝了 name 引用的 String 对象， 也就是深拷贝。验证代码如下：
-
-```java
-Person p = new Person(23, "xiaobear");
- Person p1 = (Person) p.clone();
- String result = p.getName() == p1.getName() ? "clone 是浅拷贝的 " : "clone 是深拷贝的
- System.out.println(result);
-```
-
-打印结果为：
-
-```plain
-clone 是浅拷贝的
-```
-
-所以，**clone 方法执行的是浅拷贝**。
-
-#### [3、如何进行深拷贝](#_3、如何进行深拷贝)
-如果想要深拷贝一个对象，这个对象必须要实现Cloneable 接口，实现 clone方法，并且在 clone 方法内部，把该对象引用的其他对象也要 clone 一份，这就要求这个被引用的对象必须也要实现Cloneable 接口并且实现 clone 方法。
-
-```java
-public class DeepCopy {
-    static class Body implements Cloneable{
-        public Head head;
-        public Body(){ }
-        public Body(Head head) {
-            this.head = head;
-        }
-
-        @Override
-        protected Object clone() throws CloneNotSupportedException {
-            Body clone = (Body) super.clone();
-            clone.head = (Head) head.clone();
-            return clone;
-        }
-    }
-
-    static class Head implements Cloneable{
-        public Face face;
-        public Head(Face deepCopy) {
-        }
-
-        @Override
-        protected Object clone() throws CloneNotSupportedException {
-            return super.clone();
-        }
-    }
-    static class Face implements Cloneable{
-        @Override
-        protected Object clone() throws CloneNotSupportedException {
-            return super.clone();
-        }
-    }
-
-    public static void main(String[] args) throws CloneNotSupportedException {
-        Body body = new Body(new Head(new Face()));
-        Body body1 = (Body) body.clone();
-        System.out.println("body == body1 : " + (body == body1) );
-        System.out.println("body.head == body1.head : " + (body.head == body1.head));
+public class AutomaticUnboxing {
+    public static void main(String[] args) {
+        Integer a1 = 100,a2 = 100,z3 = 139, z4 =139;
+        System.out.println(a1 == a2); //true
+        System.out.println(z3 == z4); //false
     }
 }
 ```
 
-打印输出结果：
+**如果整型字面量的值在-128 到127 之间，那么不会new 新的Integer对象，而是直接引用常量池中的Integer 对象**
 
-```plain
-body == body1 : false
-body.head == body1.head : false
-```
+## [5、float f=3.4;是否正确？](#_5、float-f-3-4-是否正确)
+不正确。3.4是双精度。将双精度型（double） 赋值给浮点型（float）属于下转型（ down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换`float f =(float)3.4`; 或者写成`float f =3.4F`;。
 
-## [4、用户不能调用构造方法，只能通过new关键字自动调用？](#_4、用户不能调用构造方法-只能通过new关键字自动调用)
-错误
+## [6、用最高效率的方法算出2 乘以8 等于多少。](#_6、用最高效率的方法算出2-乘以8-等于多少。)
+移位运算符：`int i = 2 << 3`;
 
-1. 在类内部可以用户可以使用关键字**this.构造方法名()**调用（参数决定调用的是本类对应的构造方法）
-2. 在子类中用户可以通过关键字**super.父类构造方法名()**调用（参数决定调用的是父类对应的构造方法。）
-3. 在反射中可以使用newInstance()的方式调用。
+## [7、String 类常用方法](#_7、string-类常用方法)
+| 方法 | 描述 |
+| --- | :--- |
+| [int length()](https://www.runoob.com/java/java-string-length.html) | 返回此字符串的长度 |
+| [int indexOf(int ch)](https://www.runoob.com/java/java-string-indexof.html) | 返回指定字符在此字符串中第一次出现处的索引 |
+| [int indexOf(int ch, int fromIndex)](https://www.runoob.com/java/java-string-indexof.html) | 返回在此字符串中第一次出现指定字符处的索引，从指定的索引开始搜索 |
+| [int lastIndexOf(int ch)](https://www.runoob.com/java/java-string-lastindexof.html) | 返回指定字符在此字符串中最后一次出现处的索引 |
+| [String concat(String str)](https://www.runoob.com/java/java-string-concat.html) | 将指定字符串连接到此字符串的结尾。 |
+| [boolean endsWith(String suffix)](https://www.runoob.com/java/java-string-endswith.html) | 测试此字符串是否以指定的后缀结束。 |
+| [String replace(char oldChar, char newChar)](https://www.runoob.com/java/java-string-replace.html) | 返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。 |
+| [String[] split(String regex)](https://www.runoob.com/java/java-string-split.html) | 根据给定正则表达式的匹配拆分此字符串。 |
+| [String substring(int beginIndex)](https://www.runoob.com/java/java-string-substring.html) | 返回一个新的字符串，它是此字符串的一个子字符串 |
+| [String trim()](https://www.runoob.com/java/java-string-trim.html) | 返回字符串的副本，忽略前导空白和尾部空白 |
+| [boolean equals(Object anObject)](https://www.runoob.com/java/java-string-equals.html) | 将此字符串与指定的对象比较。 |
 
-## [5、讲讲类的实例化顺序，比如父类静态数据，构造函数，子类静态数据，构造函数?](#_5、讲讲类的实例化顺序-比如父类静态数据-构造函数-子类静态数据-构造函数)
-基本上代码块分为三种：Static静态代码块、构造代码块、普通代码块
 
-代码块执行顺序**静态代码块——> 构造代码块 ——> 构造函数——> 普通代码块**
+## [8、String 、 StringBuffer 、 StringBuilder 的区别？](#_8、string-、-stringbuffer-、-stringbuilder-的区别)
+**1、可变与不可变**
 
-继承中代码块执行顺序：**父类静态块——>子类静态块——>父类代码块——>父类构造器——>子类代码块——>子类构造器**
+String：字符串常量，在修改时不改变自身；若修改，等于生成新的字符串对象
+
+StringBuffer：在修改时会改变对象自身，每次操作都是对 StringBuffer 对象本身进行修改，不是生成新的对象；使用场景：对字符串经常改变情况下，主要方法： append insert （）等。
+
+**2、线程是否安全**
+
+String：对象定义后不可变，线程安全。
+
+StringBuffer：是线程安全的（对调用方法加入同步锁），执行效率较慢，适用于多线程下操作字符串缓冲区大量数据。
+
+StringBuilder ：是线程不安全的，适用于单线程下操作字符串缓冲区大量数据。
+
+**3、共同点**
+
+StringBuilder 与 StringBuffer 有公共父类 AbstractStringBuilder(抽象类)。
 
 ```java
-public class Parent{
-    {
-        System.out.println("父类非静态代码块");
-    }
-    static{
-        System.out.println("父类静态代码块");
-    }
-    public Parent(){
-        System.out.println("父类构造器");
+public final class StringBuilder extends AbstractStringBuilder implements java.io.Serializable, CharSequence
+
+public final class StringBuffer extends AbstractStringBuilder implements java.io.Serializable, CharSequence
+```
+
+StringBuilder、StringBuffer 的方法都会调用 AbstractStringBuilder 中的公共方法，如 super.append(...)。只是 StringBuffer 会在方法上加 **synchronized** 关键字，进行同步。最后，如果程序不是多线程的，那么使用StringBuilder 效率高于StringBuffer。
+
+**对于三者使用的总结**
+
++ 如果要操作少量的数据用 = String
++ 单线程操作字符串缓冲区下操作大量数据 = StringBuilder
++ 多线程操作字符串缓冲区下操作大量数据 = StringBuffffer
+
+## [9、 while 和do while 有什么区别？](#_9、-while-和do-while-有什么区别)
+while是先判断再执行；do...while是先执行再判断，同等条件下，后者多执行了一次。
+
+## [10、switch 语句能否作用在byte 、long 、String 上？](#_10、switch-语句能否作用在byte-、long-、string-上)
++ 可以用在`byte、int、short、char`以及它们的封装类上
++ 不能用在其他基本类型上`long、double、float、boolean`以及封装类
++ jdk1.7及以上，可以用以字符串
++ 可以用于枚举类型
+
+## [11、String s ＝new String("xyz")；，创建了几个String 对象？二者之间再什么区别。](#_11、string-s-new-string-xyz-创建了几个string-对象-二者之间再什么区别。)
+创建了2个对象，一个是内存中的“xyz”，还有一个是s，指向xyz
+
+## [12、自动装箱与拆箱](#_12、自动装箱与拆箱)
+自动装箱：将基本类型用他们的引用类型包装起来
+
+自动拆箱：将包装类型转换为基本类型
+
+## [13、Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？](#_13、math-round-11-5-等于多少-math-round-11-5-等于多少)
+Math.round(11.5)的返回值是 12，Math.round(-11.5)的返回值是-11。**四舍五入的原理是在参数上加 0.5 然后进行下取整**。
+
+## [14、下面代码运行结果是多少？](#_14、下面代码运行结果是多少)
+```java
+int count = 0;
+for (int k = 0; k < 100; k++) {
+    count = count++;
+}
+System.out.println(count);
+```
+
+**解析**：++是先赋值，再自增，所以count永远是0
+
+## [15、Java中基本类型是如何转换的？](#_15、java中基本类型是如何转换的)
+基本类型等级从低到高：
+
++ byte、short、int、long、float、double
++ char、int、long、float、double
+
+自动转换：运算过程中，低级可以自动向高级进行转换
+
+强制转换：高级需要强制转换成低级，可能会丢失精度
+
+**规则**：
+
++ = 右边先自动转换成表达式中最高级的数据类型，再进行运算。整型经过运算会自动转化最低 int 级别，如两个 char 类型的相加，得到的是一个 int 类型的数值。
++ = 左边数据类型级别 大于 右边数据类型级别，右边会自动升级
++ = 左边数据类型级别 小于 右边数据类型级别，需要强制转换右边数据类型
++ char 与 short，char 与 byte 之间需要强转，因为 char 是无符号类型
+
+## [16、String. intern() 你了解吗？](#_16、string-intern-你了解吗)
+String.intern()是一个Native(本地)方法，它的作用是如果**字符串常量池已经包含一个等于此String对象的字符串，则返回字符串常量池中这个字符串的引用**, **否则将当前String对象的引用地址（堆中）添加到字符串常量池中并返回**。
+
+```java
+public class StringInternTest {
+    public static void main(String[] args) {
+      	// 基本数据类型之间的 ==  是比较值，引用数据类型 == 比较的是地址值
+      	// 1：在Java Heap中创建对象 2：在字符串常量池中添加 小熊学Java
+        String a = new String("小熊学Java");
+      	// 调用 intern 方法，因上一步中已经将 小熊学Java 存入常量池中，这里直接返回常量池 小熊学Java 的引用地址
+        String b = a.intern();
+      	// a 的地址在Java Heap中 ， b的地址在 常量池中 ，所以结果是flase
+        System.out.println(a == b);
+      	// 因为常量池中已经包含小熊学Java，所以直接返回
+        String c = "小熊学Java";
+        // b c 的地址一致，所以是true
+        System.out.println(b == c);
     }
 }
-public class Son extends parent{
-    public Son(){
-        System.out.println("子类构造器");
-    }
-    static{
-        System.out.println("子类静态代码块");
-    }
-    {
-      System.out.println("子类非静态代码块");   
-    }
-}
 
-public class Test {
-    public static void main(String[] args){
-        Son son = new Son();
-    }
-}
+//结果
+false
+true
 ```
 
-运行结果：
+## [16、String类为什么要设置成不可变?](#_16、string类为什么要设置成不可变)
+1. 线程安全性：不可变的String对象可以在多线程环境下安全地共享，因为它们的值不能被修改。这消除了在并发环境中进行同步的需要，提高了程序的性能和可靠性。
+2. 缓存哈希值：String类经常被用作哈希表的键，因此将String设置为不可变可以确保哈希值的稳定性。如果String是可变的，那么在修改String的值后，它的哈希值也会改变，导致在哈希表中无法正确找到对应的键。
+3. 安全性：不可变的String对象可以被安全地用作方法的参数，因为调用方法时无法修改它们的值。这样可以防止恶意代码通过修改参数值来破坏方法的行为。
+4. 字符串池：Java中的字符串池是一种字符串缓存机制，它可以重用相同值的字符串对象，以节省内存。由于String是不可变的，可以将相同值的字符串对象存储在字符串池中，从而提高内存利用率。
 
-```plain
-父类静态块
-子类静态代码块
-父类非静态代码块
-父类构造器
-子类非静态代码块
-子类构造器
-```
+## [17、String常量池是什么？](#_17、string常量池是什么)
+String常量池是一个特殊的内存区域，用于存储字符串常量，避免重复创建相同的字符串对象
 
-**类实例化顺序为：**父类静态代码块/静态域->子类静态代码块/静态域 -> 父类非静态代码块 -> 父类构造器 -> 子类非静态代码块 -> 子类构造器
+## [18、String对象的内存分配是放在栈上还是堆上？](#_18、string对象的内存分配是放在栈上还是堆上)
+String对象的引用放在栈上，而String对象本身存储在堆上。
 
-## [6、构造器（constructor）是否可被重写（override）？](#_6、构造器-constructor-是否可被重写-override)
-构造器不能被继承，因此不能被重写，但可以被重载。每一个类必须有自己的构造函数，负责构造自己这部分的构造。子类不会覆盖父类的构造函数，相反必须一开始调用父类的构造函数。
+## [19、如何将一个字符串互换为整数类型（int）？](#_19、如何将一个字符串互换为整数类型-int)
+可以使用Integer.parseInt()方法将字符串转换为整数类型，例如：String str = "123"; int num = Integer.parseInt(str);
 
-## [7、创建对象的几种方式？](#_7、创建对象的几种方式)
-1. new创建新对象
-2. 通过反射机制
-3. 采用clone机制
-4. 通过序列化机制
+可以使用String.valueOf()方法或者将整数类型与空字符串相加（+" "）来将整数类型转换为字符串，例如：int num = 123; String str = String.valueOf(num); 或者 String str = num + "";
 
-## [8、Super与this表示什么？](#_8、super与this表示什么)
-Super表示当前类的父类对象  
-This表示当前类的对象
+## [20、包装类和基本类型存储在内存中的位置有什么区别？](#_20、包装类和基本类型存储在内存中的位置有什么区别)
+基本类型的变量存储在栈内存中，而包装类对象存储在堆内存中
 
-## [9、Java四种引用类型](#_9、java四种引用类型)
-1. **强引用**：强引用是平常中使用最多的引用，强引用在程序内存不足（OOM）的时候也不会被回收。
+## [21、包装类的缓存是什么意思？](#_21、包装类的缓存是什么意思)
+在范围较小的数值范围中，Java的包装类会使用缓存来提高性能，例如Integer类会缓存-128至127之间的整数对象。
 
-```java
-String str = new String("str");
-```
+## [22、Java中日期和时间的处理在多线程环境下是否安全？](#_22、java中日期和时间的处理在多线程环境下是否安全)
+java.util.Date类和java.util.Calendar类在多线程环境下是不安全的，可以使用java.time包中的类来实现线程安全的日期和时间处理
 
-2. **软引用**：软引用在程序内存不足时，会被回收。
+## [23、Java 8引入了新的日期和时间API的主要目的是什么？](#_23、java-8引入了新的日期和时间api的主要目的是什么)
+Java 8引入了新的日期和时间API（`java.time`包）的主要目的是改进Java中处理日期和时间的能力。旧的`java.util.Date`和`java.util.Calendar`类在设计上存在一些问题，比如可变性、线程安全性和易用性等方面的挑战。
 
-```java
-// 注意：wrf这个引用也是强引用，它是指向SoftReference这个对象的，
-// 这里的软引用指的是指向new String("str")的引用，也就是SoftReference类中T
-SoftReference<String> wrf = new SoftReference<String>(new String("str"));
-```
+新的日期和时间API解决了这些问题，并提供了更好的API设计和功能。它的主要目标包括：
 
-可用场景： 创建缓存的时候，创建的对象放进缓存中，当内存不足时，JVM就会回收早先创建的对象。
-
-3. **弱引用**：只要JVM垃圾回收器发现了它，就会将之回收
-
-```java
-WeakReference<String>wrf=newWeakReference<String>(str);
-```
-
-可用场景：Java源码中的java.util.WeakHashMap中的key就是使用弱引用，我的理解就是，一旦我不需要某个引用，JVM会自动帮我处理它，这样我就不需要做其它操作。
-
-4. **虚引用**：虚引用的回收机制跟弱引用差不多，但是它被回收之前，会被放入ReferenceQueue中。注意哦，其它引用是被JVM回收后才被传入ReferenceQueue中的。由于这个机制，所以虚引用大多被用于引用销毁前的处理工作。还有就是，虚引用创建的时候，必须带有ReferenceQueue
-
-```java
-PhantomReference<String>prf=newPhantomReference<String>(new
-String("str"),newReferenceQueue<>());
-```
-
-可用场景： 对象销毁前的一些操作，比如说资源释放等。Object.finalize() 虽然也可以做这类动作，但是这个方式即不安全又低效上诉所说的几类引用，都是指对象本身的引用，而不是指 Reference 的四个子类的引用( SoftReference 等)。
-
-## [10、成员变量（属性）和局部变量的区别？](#_10、成员变量-属性-和局部变量的区别)
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/33699215/1791703821114-41e52809-83d3-4b2a-8cee-225b8e311493.png)
-
+1. 不可变性：新的API中的日期和时间类都是不可变的，这意味着一旦创建，它们的值就不会改变。这有助于避免在多线程环境下出现并发问题，并且更符合日期和时间的本质特性。
+2. 线程安全性：新的API中的日期和时间类是线程安全的，可以在多线程环境下安全使用，而无需额外的同步措施。
+3. 易用性：新的API提供了一组清晰、一致且易于使用的方法来处理日期和时间。它们提供了丰富的功能，如日期计算、格式化、解析、时区处理等，使得开发人员能够更轻松地处理各种日期和时间操作。
+4. 扩展性：新的API提供了一些扩展点，使得开发人员可以自定义和扩展日期和时间的处理能力，以满足特定的需求。
 
