@@ -8,7 +8,7 @@ const withDefaultHeight = (
 
 export const unlockConfig = {
   // 版本号变更可强制用户重新验证
-  unlockVersion: "v1",
+  unlockVersion: "v0.0.1",
   // 调试用：设为 true 时无视本地已解锁状态，始终触发限制
   forceLock: false,
   code: "8888",

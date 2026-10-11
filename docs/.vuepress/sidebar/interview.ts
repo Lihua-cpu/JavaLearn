@@ -24,7 +24,7 @@ export const interview = arraySidebar([
     children: [
       { 
         text: "说明", 
-        link: "ai-core-concepts" 
+        link: "/interview/java/intro" 
       },
       { 
         text: "一、Java基础", 

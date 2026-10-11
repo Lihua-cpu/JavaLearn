@@ -38,22 +38,23 @@ head:
 
 ## 🌱 Java 基础
 
-- [Java 概述](../java/basis/java-basic-questions-01.md#基础概念与常识)
-- [Java 数据类型](../java/basis/java-basic-questions-01.md#基本数据类型)
-- [Java 面向对象](../java/basis/java-basic-questions-02.md#面向对象基础)
-- [Java 集合](../java/collection/java-collection-questions-01.md)
-- [Java IO](../java/io/README.md)
-- [Java 异常](../java/basis/java-basic-questions-03.md#异常)
-- [Java 内部类](../java/basis/syntactic-sugar.md#内部类)
-- [Java 枚举和泛型](../java/basis/java-basic-questions-03.md#泛型)
-- [Java SE 语法](../java/basis/java-basic-questions-01.md#基本语法)
+- [一、Java 基础](./java/basic)
+- [二、Java 面向对象](./java/oop)
+- [三、Java 数据类型](./java/data-types)
+- [四、Java 异常](./java/exceptions)
+- [五、Java 集合](./java/collections)
+- [六、Java IO](./java/io)
+- [七、Java 枚举和泛型](./java/enums-generics)
 
 ## ☕ Java 高级
 
-- [Java 反射](../java/basis/java-basic-questions-03.md#反射)
-- [Java 并发编程](../java/concurrent/java-concurrent-questions-01.md)
-- [JVM 核心知识](../java/jvm/README.md)
-- [Java 新特性](../java/new-features/README.md)
+- [八、Java 反射](../java/basis/java-basic-questions-03.md#反射)
+- [九、JVM](../java/concurrent/java-concurrent-questions-01.md)
+- [十、JVM 并发编程](../java/jvm/README.md)
+- [十一、Java 多线程](../java/new-features/README.md)
+- [十二、Java web开发](../java/new-features/README.md)
+- [十三、Java 设计模式（可选）](../java/new-features/README.md)
+- [十四、Java 新特性](../java/new-features/README.md)
 
 ## 💻 计算机基础
 

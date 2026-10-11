@@ -15,7 +15,44 @@ const CHUNK_LOAD_ERROR_PATTERN =
 const getCurrentLocation = (): string =>
   `${window.location.pathname}${window.location.search}${window.location.hash}`;
 
+const COPYRIGHT_NOTICE = [
+  "",
+  "",
+  "———————————————",
+  "作者：Leon",
+  "原文链接：{url}",
+  "来源：LeonLearn | Java 面试指南",
+  "著作权归作者所有，转载请注明出处。",
+].join("\n");
+
+const COPYRIGHT_CONTENT_SELECTOR = ".theme-hope-content, .vp-page-content";
+const COPYRIGHT_MIN_LENGTH = 30;
+
+const appendCopyrightNotice = (event: ClipboardEvent): void => {
+  const selection = window.getSelection();
+  if (!selection || selection.isCollapsed || selection.rangeCount === 0) return;
+
+  const text = selection.toString();
+  if (text.trim().length < COPYRIGHT_MIN_LENGTH) return;
+
+  const anchor = selection.getRangeAt(0).commonAncestorContainer;
+  const element = anchor instanceof Element ? anchor : anchor.parentElement;
+  if (!element?.closest(COPYRIGHT_CONTENT_SELECTOR)) return;
+
+  const clipboardData = event.clipboardData;
+  if (!clipboardData) return;
+
+  clipboardData.setData(
+    "text/plain",
+    `${text}${COPYRIGHT_NOTICE.replace("{url}", window.location.href)}`,
+  );
+  event.preventDefault();
+};
+
 export default defineClientConfig({
+  setup(): void {
+    document.addEventListener("copy", appendCopyrightNotice);
+  },
   enhance({ app, router }) {
     app.component("Mermaid", LazyMermaid);
     app.component("UnlockContent", UnlockContent);

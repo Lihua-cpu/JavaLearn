@@ -90,62 +90,76 @@ export default sidebar({
         },
         {
             text: "二、Java数据结构与算法",
-            prefix: "basis/",
+            prefix: "basic/",
             collapsible: true,
             children: [
               {
                 text: "1、数据结构概述",
-                link: "/java/basis/data-structures-overview",
+                link: "/java/basic/data-structures-overview",
               },
               {
                 text: "2、数组与链表",
-                link: "/java/basis/arrays-and-linked-lists",
+                link: "/java/basic/arrays-and-linked-lists",
               },
               {
                 text: "3、栈与队列",
-                link: "/java/basis/stacks-and-queues",
+                link: "/java/basic/stacks-and-queues",
               },
               {
                 text: "4、哈希表",
-                link: "/java/basis/hash-table",
+                link: "/java/basic/hash-table",
               },
               {
                 text: "5、树与二叉树",
-                link: "/java/basis/trees-and-binary-trees",
+                link: "/java/basic/trees-and-binary-trees",
               },
               {
                 text: "6、分治算法",
-                link: "/java/basis/divide-and-conquer-algorithms",
+                link: "/java/basic/divide-and-conquer-algorithms",
               },
               {
                 text: "7、排序算法",
-                link: "/java/basis/sorting-algorithms",
+                link: "/java/basic/sorting-algorithms",
               },
               {
                 text: "8、贪心算法",
-                link: "/java/basis/greedy-algorithms",
+                link: "/java/basic/greedy-algorithms",
               },
               {
                 text: "9、动态规划",
-                link: "/java/basis/dynamic-programming",
+                link: "/java/basic/dynamic-programming",
               },
-              
               {
                 text: "10、图与图算法",
-                link: "/java/basis/graphs-and-graph-algorithms",
+                link: "/java/basic/graphs-and-graph-algorithms",
               },
               {
                 text: "11、搜索算法",
-                link: "/java/basis/searching-algorithms",
+                link: "/java/basic/searching-algorithms",
               },
             ],
           },
           {
             text: "三、Java新特性",
-            prefix: "basis/",
+            prefix: "newFeatures/",
             collapsible: true,
             children: [
-              
+              {
+                text: "Java8 核心新特性",
+                link: "/java/newFeatures/java8-core-features",
+              },
+              {
+                text: "Java11 核心新特性",
+                link: "/java/newFeatures/java11-core-features",
+              },
+              {
+                text: "Java17 核心新特性",
+                link: "/java/newFeatures/java17-core-features",
+              },
+              {
+                text: "Java21 核心新特性",
+                link: "/java/newFeatures/java21-core-features",
+              },
             ],
           },
       ],
@@ -182,24 +196,36 @@ export default sidebar({
         //   ],
         // },
         {
-            text: "MySQL基础",
+            text: "MySQL",
             prefix: "basis/",
             collapsible: true,
             children: [
-              
-            ],
-          },
-          {
-            text: "数据库中间件MyCat",
-            prefix: "basis/",
-            collapsible: true,
-            children: [
+              {
+                text: "MySql入门",
+                link: "/java/mysql/mysql-introduction",
+              },
+              {
+                text: "Mysql实战",
+                link: "/java/mysql/mysql-practice",
+              },
+              {
+                text: "数据库中间件MyCat",
+                link: "/java/mysql/mysql-middleware-mycat",
+              },
             ],
           },
           {
           text: "Redis",
           collapsible: true,
           children: [
+            {
+                text: "Redis入门",
+                link: "/java/redis/redis-introduction",
+              },
+              {
+                text: "Redis实战",
+                link: "/java/redis/redis-practice",
+              },
           ],
         },
       ],
@@ -341,27 +367,19 @@ export default sidebar({
       children: [
        {
           text: "idea",
-          collapsible: true,
-          children: [
-          ],
+          link: "/java/idea/idea-introduction",
         },
         {
           text: "Git",
-          collapsible: true,
-          children: [
-          ],
+          link: "/java/git/git-introduction",
         },
         {
           text: "Maven",
-          collapsible: true,
-          children: [
-          ],
+          link: "/java/maven/maven-introduction",
         },
         {
           text: "DBeaver",
-          collapsible: true,
-          children: [
-          ],
+          link: "/java/dbeaver/dbeaver-introduction",
         },
       ],
     },
