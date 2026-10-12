@@ -123,23 +123,23 @@ export const interview = arraySidebar([
           },
           { 
             text: "MySql索引", 
-            link: "/interview/database/mysql/mysql" 
+            link: "/interview/database/mysql/index" 
           },
           { 
             text: "MySql内部技术原理", 
-            link: "/interview/database/mysql/basic" 
+            link: "/interview/database/mysql/internal" 
           },
           { 
             text: "MySql事务", 
-            link: "/interview/database/mysql/mysql" 
+            link: "/interview/database/mysql/transaction" 
           },
           { 
             text: "MySql锁机制", 
-            link: "/interview/database/mysql/basic" 
+            link: "/interview/database/mysql/lock" 
           },
           { 
             text: "MySql优化", 
-            link: "/interview/database/mysql/basic" 
+            link: "/interview/database/mysql/optimization" 
           },
         ],
       },
