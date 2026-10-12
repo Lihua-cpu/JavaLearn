@@ -1,7 +1,7 @@
 ---
 title: 十一、多线程
 description: 十一、多线程
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

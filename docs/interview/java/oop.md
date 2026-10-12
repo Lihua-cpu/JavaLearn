@@ -1,7 +1,7 @@
 ---
 title: 2、Java面向对象
 description: Java基础面试题、Java面试题、Java面向对象
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

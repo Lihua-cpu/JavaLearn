@@ -1,7 +1,7 @@
 ---
 title: 十三、Java 设计模式（可选）
 description: 十三、Java 设计模式（可选）
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

@@ -1,7 +1,7 @@
 ---
 title: 七、Java 枚举 & 范型
 description: 七、Java 枚举 & 范型
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

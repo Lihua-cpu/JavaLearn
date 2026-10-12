@@ -1,7 +1,7 @@
 ---
 title: 说明
 description: Java基础面试题说明
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

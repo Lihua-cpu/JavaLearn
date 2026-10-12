@@ -1,7 +1,7 @@
 ---
 title: 4、Java 异常处理
 description: Java基础面试题、Java面试题
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

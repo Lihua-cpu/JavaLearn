@@ -1,7 +1,7 @@
 ---
 title: 十、并发
 description: 十、并发
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础

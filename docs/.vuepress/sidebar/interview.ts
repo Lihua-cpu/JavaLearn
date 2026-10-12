@@ -114,32 +114,36 @@ export const interview = arraySidebar([
         collapsible: true,
         children: [
           { 
-            text: "MySql面试题说明", 
-            link: "/interview/database/mysql/mysql" 
+            text: "一、MySql面试题说明", 
+            link: "/interview/database/mysql/intro" 
           },
           { 
-            text: "MySql基础面试题", 
+            text: "二、MySql基础面试题", 
             link: "/interview/database/mysql/basic" 
           },
           { 
-            text: "MySql索引", 
+            text: "三、MySql索引", 
             link: "/interview/database/mysql/index" 
           },
           { 
-            text: "MySql内部技术原理", 
+            text: "四、MySql内部技术原理", 
             link: "/interview/database/mysql/internal" 
           },
           { 
-            text: "MySql事务", 
+            text: "五、MySql事务", 
             link: "/interview/database/mysql/transaction" 
           },
           { 
-            text: "MySql锁机制", 
+            text: "六、MySql锁机制", 
             link: "/interview/database/mysql/lock" 
           },
           { 
-            text: "MySql优化", 
+            text: "七、MySql优化", 
             link: "/interview/database/mysql/optimization" 
+          },
+          { 
+            text: "八、MySql其它", 
+            link: "/interview/database/mysql/other" 
           },
         ],
       },

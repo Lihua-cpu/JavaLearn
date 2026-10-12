@@ -1,7 +1,7 @@
 ---
 title: 九、JVM
 description: 九、JVM
-category: 面试资料
+category: Java面试资料
 tag:
   - 后端面试 
   - Java基础
