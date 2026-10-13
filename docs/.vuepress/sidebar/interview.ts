@@ -170,23 +170,27 @@ export const interview = arraySidebar([
     collapsible: true,
     children: [
       { 
-        text: "Spring面试题", 
+        text: "Spring 面试题说明", 
+        link: "/interview/spring/intro" 
+      },
+      { 
+        text: "Spring 面试题", 
         link: "/interview/spring/spring" 
       },
       { 
-        text: "Srping MVC面试题", 
+        text: "Srping MVC 面试题", 
         link: "/interview/spring/spring-mvc" 
       },
       { 
-        text: "MyBatis面试题", 
+        text: "MyBatis 面试题", 
         link: "/interview/spring/mybatis" 
       },
       { 
-        text: "Spring Boot面试题", 
+        text: "Spring Boot 面试题", 
         link: "/interview/spring/spring-boot" 
       },
       { 
-        text: "Spring Cloud面试题", 
+        text: "Spring Cloud 面试题", 
         link: "/interview/spring/spring-cloud" 
       },
       { 
