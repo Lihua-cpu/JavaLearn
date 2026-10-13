@@ -153,11 +153,11 @@ export const interview = arraySidebar([
         collapsible: true,
         children: [
           { 
-            text: "Redis面试题说明", 
-            link: "/interview/database/redis/redis" 
+            text: "一、Redis 面试题说明", 
+            link: "/interview/database/redis/intro" 
           },
           { 
-            text: "Redis基础面试题", 
+            text: "二、Redis 面试题", 
             link: "/interview/database/redis/basic" 
           },
         ]
