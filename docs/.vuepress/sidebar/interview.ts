@@ -170,67 +170,75 @@ export const interview = arraySidebar([
     collapsible: true,
     children: [
       { 
-        text: "Spring 面试题说明", 
+        text: "一、Spring 面试题说明", 
         link: "/interview/spring/intro" 
       },
       { 
-        text: "Spring 面试题", 
+        text: "二、Spring 面试题", 
         link: "/interview/spring/spring" 
       },
       { 
-        text: "Srping MVC 面试题", 
+        text: "三、Spring MVC 面试题", 
         link: "/interview/spring/spring-mvc" 
       },
       { 
-        text: "MyBatis 面试题", 
+        text: "四、MyBatis 面试题", 
         link: "/interview/spring/mybatis" 
       },
       { 
-        text: "Spring Boot 面试题", 
+        text: "五、Spring Boot 面试题", 
         link: "/interview/spring/spring-boot" 
       },
       { 
-        text: "Spring Cloud 面试题", 
+        text: "六、Spring Cloud 面试题", 
         link: "/interview/spring/spring-cloud" 
       },
       { 
-        text: "Spring Cloud Alibaba面试题", 
+        text: "七、Spring Cloud Alibaba面试题", 
         link: "/interview/spring/spring-cloud-alibaba" 
       },
     ],
   },
   {
-    text: "Java微服务中间件",
+    text: "Java 中间件",
     icon: ICONS.CODE,
     collapsible: true,
     children: [
       { 
-        text: "RabbitMQ面试题", 
-        link: "/interview/component/rabbitmq" 
+        text: "一、说明", 
+        link: "/interview/middleware/intro" 
       },
       { 
-        text: "Elastic Search面试题", 
-        link: "/interview/component/elastic-search" 
+        text: "二、Rabbit MQ面试题", 
+        link: "/interview/middleware/rabbitmq" 
       },
       { 
-        text: "Zookeeper面试题", 
-        link: "/interview/component/zookeeper" 
+        text: "三、Nacos面试题", 
+        link: "/interview/middleware/nacos" 
       },
       { 
-        text: "Seata面试题", 
-        link: "/interview/component/seata" 
+        text: "四、Elastic Search面试题", 
+        link: "/interview/middleware/elastic-search" 
       },
       { 
-        text: "Nacos面试题", 
-        link: "/interview/component/nacos" 
+        text: "五、Sentinel面试题", 
+        link: "/interview/middleware/sentinel" 
       },
       { 
-        text: "Kafka面试题", 
-        link: "/interview/component/kafka" 
+        text: "六、Seata面试题", 
+        link: "/interview/middleware/seata" 
       },
       { 
-        text: "Sentinel面试题", 
-        link: "/interview/component/sentinel" 
+        text: "七、Kafka面试题", 
+        link: "/interview/middleware/kafka" 
+      },
+      { 
+        text: "八、Zookeeper面试题", 
+        link: "/interview/middleware/zookeeper" 
+      },
+      { 
+        text: "九、其它", 
+        link: "/interview/middleware/other" 
       },
     ],
   },
