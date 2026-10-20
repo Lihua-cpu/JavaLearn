@@ -1,7 +1,7 @@
-import { hasGlobalComponent } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/index.js";
-import { useScriptTag } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vueuse/core/dist/index.js";
+import { hasGlobalComponent } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/helper/dist/client/index.js";
+import { useScriptTag } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vueuse/core/dist/index.js";
 import { h } from "vue";
-import { VPIcon } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/plugin-icon/dist/client/index.js"
+import { VPIcon } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/plugin-icon/dist/client/index.js"
 
 export default {
   enhance: ({ app }) => {

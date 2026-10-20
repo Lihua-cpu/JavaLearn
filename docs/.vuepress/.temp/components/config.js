@@ -1,7 +1,7 @@
-import { hasGlobalComponent } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/index.js";
-import Badge from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-plugin-components/dist/client/components/Badge.js";
+import { hasGlobalComponent } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/helper/dist/client/index.js";
+import Badge from "/Users/user/Documents/GitHub/JavaLearn/node_modules/vuepress-plugin-components/dist/client/components/Badge.js";
 
-import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/sr-only.css";
+import "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/helper/dist/client/styles/sr-only.css";
 
 export default {
   enhance: ({ app }) => {

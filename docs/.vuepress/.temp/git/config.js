@@ -1,4 +1,4 @@
-import { GitContributors } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/plugin-git/dist/client/components/GitContributors.js";
+import { GitContributors } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/plugin-git/dist/client/components/GitContributors.js";
 
 export default {
   enhance: ({ app }) => {

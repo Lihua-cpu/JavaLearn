@@ -1,15 +1,15 @@
-import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scrollPromise } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/bundle/exports/base.js";
+import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scrollPromise } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/vuepress-theme-hope/dist/bundle/exports/base.js";
 
-import { defineCatalogInfoGetter } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/plugin-catalog/dist/client/index.js"
+import { defineCatalogInfoGetter } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/plugin-catalog/dist/client/index.js"
 import { h } from "vue"
 import { resolveComponent } from "vue"
-import { Blog, BloggerInfo, SocialMedias, setupBlog } from "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/bundle/exports/blog.js";
-import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/client/styles/blog/layout.scss";
+import { Blog, BloggerInfo, SocialMedias, setupBlog } from "/Users/user/Documents/GitHub/JavaLearn/node_modules/vuepress-theme-hope/dist/bundle/exports/blog.js";
+import "/Users/user/Documents/GitHub/JavaLearn/node_modules/vuepress-theme-hope/dist/client/styles/blog/layout.scss";
 
-import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/colors.css";
-import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/normalize.css";
-import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/@vuepress/helper/dist/client/styles/sr-only.css";
-import "/Users/user/Documents/code/github/JavaLearn-main/node_modules/vuepress-theme-hope/dist/client/styles/index.scss";
+import "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/helper/dist/client/styles/colors.css";
+import "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/helper/dist/client/styles/normalize.css";
+import "/Users/user/Documents/GitHub/JavaLearn/node_modules/@vuepress/helper/dist/client/styles/sr-only.css";
+import "/Users/user/Documents/GitHub/JavaLearn/node_modules/vuepress-theme-hope/dist/client/styles/index.scss";
 
 defineCatalogInfoGetter((meta) => {
   const title = meta.title;

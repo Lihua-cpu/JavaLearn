@@ -840,7 +840,9 @@ var theme_default = hopeTheme({
     },
     // The upstream copyright plugin can throw during hydration if `#app` is unavailable.
     // Keep it disabled until the plugin adds a null-safe mount path.
-    copyright: false,
+    // Leon TIP 20261010: 这里的 copyright 插件是用于添加文章的版权信息的，但是它在 hydration 时会抛出一个错误
+    // 所以这里将其禁用，等插件修复了再开启。
+    copyright: true,
     feed: {
       atom: true,
       json: true,
